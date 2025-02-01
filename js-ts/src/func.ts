@@ -17,3 +17,10 @@ function addition(x: number, y: number = 4) {
 }
 
 console.log(addition(4));
+
+function greetings(name: string, message: string = 'Welcome to bangladesh.'): string {
+    return `hey ${name}! ${message}`
+}
+
+console.log(greetings('Saif'));
+console.log(greetings('Amin', 'How are you?'));
