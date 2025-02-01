@@ -1,9 +1,9 @@
 import './basic'
-
+import './array'
 
 const user = {
     name: 'saif',
-    role: Role.ADMIN
+    role: "ADMIN"
 }
 
 console.log(user);
