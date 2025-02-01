@@ -1,5 +1,5 @@
-import './basic'
-import './array'
+import "@src/array"
+import "@src/basic"
 
 const user = {
     name: 'saif',
