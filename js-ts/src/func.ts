@@ -24,3 +24,18 @@ function greetings(name: string, message: string = 'Welcome to bangladesh.'): st
 
 console.log(greetings('Saif'));
 console.log(greetings('Amin', 'How are you?'));
+
+enum EmployeeRole {
+    ADMIN = 'ADMIN',
+    MANAGER = 'MANAGER',
+    DEVELOPER = 'DEVELOPER',
+}
+
+const empolyee: {
+    id: number;
+    name: string;
+    role: EmployeeRole
+}[] = [];
+
+empolyee.push({ id: 1, name: 'aminul islam', role: EmployeeRole.MANAGER });
+empolyee.push({ id: 2, name: 'saif', role: EmployeeRole.DEVELOPER })
