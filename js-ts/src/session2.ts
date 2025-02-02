@@ -25,6 +25,36 @@
  *          -> type CB = () => void
  *
  *
+ * type union
+ * needs to have same atleast single property to work properly
+ * API Response
+ *
+ *
+ * type inheretance | intersection
+ * typing in frontend
+ *
+ *
+ *
+ * function generic
+ * for reusablity and type safe
+ * 1-2 argument type in one function
+ *
+ *          function functionName<T>(value: T):T {
+ *                / your function
+ *          }
+ *
+ *
+ * type generixs
+ * API response
+ * example: mysterybox
+ * goat example
+ *
+ *
+ * converting day01's codebase from js to ts
+ *
+ *
+ * Task
+ * how to implement generic in day01's codebase
 */
 
 
