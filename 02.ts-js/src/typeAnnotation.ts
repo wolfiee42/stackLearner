@@ -8,7 +8,7 @@ console.log(greetings("Alice")); // Hello, Alice!
 
 
 // typed return value
-function add(a: number, b: number): number {
+function addition(a: number, b: number): number {
     return a + b;
 }
 
