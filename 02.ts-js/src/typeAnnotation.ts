@@ -27,3 +27,13 @@ function displayInfo(name: string, age?: number): string {
 
 console.log(displayInfo('Bob', 30)); // Bob is 30 years old.
 console.log(displayInfo('Alice')); // Alice's age is unknown
+
+
+
+// default parameter
+function multiply(a: number, b: number = 1): number {
+    return a * b;
+}
+
+console.log(multiply(5, 2)); // 10
+console.log(multiply(5)); // 5
