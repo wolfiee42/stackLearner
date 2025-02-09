@@ -53,3 +53,18 @@ const cat: IAnimal = {
     type: 'husky',
     birthDay: '23-4-21'
 }
+
+
+// function signiture
+// type
+type AddFunction = (a: number, b: number) => number;
+
+const addition3: AddFunction = (a, b) => a + b;
+
+// interface 
+
+interface DivideFunction {
+    (a: number, b: number): number
+}
+
+const divide: DivideFunction = (a, b) => a / b;
