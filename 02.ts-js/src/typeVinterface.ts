@@ -68,3 +68,4 @@ interface DivideFunction {
 }
 
 const divide: DivideFunction = (a, b) => a / b;
+
