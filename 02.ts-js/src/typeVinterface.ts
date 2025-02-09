@@ -35,3 +35,21 @@ const admin1: TAdmin1 = {
     email: 'ashik@esa.com',
     role: "super-admin"
 }
+
+//! mutable and immutable 
+//! interface is mutable
+//! type is immutable
+
+interface IAnimal {
+    name: string;
+    type: string;
+}
+interface IAnimal {
+    birthDay: string; // Augmented later
+}
+
+const cat: IAnimal = {
+    name: 'john',
+    type: 'husky',
+    birthDay: '23-4-21'
+}
