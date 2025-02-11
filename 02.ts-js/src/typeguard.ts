@@ -127,3 +127,18 @@ function processOrder32(json: string) {
 
 const validOrderJSON = '{"id": "123", "total": 50.5, "items": ["item1", "item2"]}';
 processOrder32(validOrderJSON);
+
+// usecase 05 // Custom Error Handling
+function isError(error: unknown): error is Error {
+    return error instanceof Error;
+}
+
+try {
+    throw new Error('Something went wrong!')
+} catch (error: unknown) {
+    if (isError(error)) {
+        console.log(error.message);
+    } else {
+        console.log(`Unknown error occured`);
+    }
+}
