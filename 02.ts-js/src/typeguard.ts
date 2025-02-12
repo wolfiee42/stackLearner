@@ -250,3 +250,20 @@ function handleAction(action: ACTION): void {
 }
 
 handleAction(action);
+
+// usecase 02
+type RolePermission = {
+    admin: string[];
+    user: string[];
+    guest: string[];
+}
+
+const permissions = {
+    admin: ['read', 'write', 'delete'],
+    user: ['read', 'write'],
+    guest: ['read'],
+    extraRole: ['unknown']
+} satisfies RolePermission;
+
+
+console.log(permissions.extraRole);
