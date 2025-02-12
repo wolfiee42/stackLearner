@@ -182,3 +182,71 @@ function getArea(shape: Shape): number {
             break;
     }
 }
+
+
+// usecase 02
+
+const API_ROUTES = {
+    USERS: '/api/users',
+    PRODUCTS: "/api/products",
+    ORDERS: "/api/orders"
+} as const;
+
+
+function fetchForApi(route: keyof typeof API_ROUTES): string {
+    return API_ROUTES[route];
+}
+
+fetchForApi('USERS'); // valid
+// fetchForApi('INVALID'); // invalid;
+
+
+
+// usecase 03
+const COLORS = ['red', 'green', 'blue'] as const;
+
+type BG_COLORS = typeof COLORS[number];
+
+function setBackground(color: BG_COLORS): void {
+    console.log(`background colors is ${color}`);
+}
+
+// satisfies
+
+type CONFIG = {
+    host: string;
+    port: number;
+    useSSL?: boolean;
+}
+
+const config = {
+    host: 'localhost',
+    port: 4000,
+    useSSL: false,
+    debug: true
+} satisfies CONFIG
+
+
+console.log(config.debug);
+
+
+// usecase 01
+
+type ACTION =
+    | { type: 'ADD', payload: number }
+    | { type: 'DELETE', id: number }
+
+const action = {
+    type: 'ADD',
+    payload: 5
+} satisfies ACTION;
+
+function handleAction(action: ACTION): void {
+    if (action.type === 'ADD') {
+        console.log(`Actoin type: ${action.type} & payload is ${action.payload}`);
+    } else {
+        console.log(`Action type: ${action.type} & id number is ${action.id}`);
+    }
+}
+
+handleAction(action);
