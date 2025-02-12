@@ -142,3 +142,43 @@ try {
         console.log(`Unknown error occured`);
     }
 }
+
+
+// never type
+function throwError(message: string): never {
+    throw new Error(message);
+}
+
+
+function infinityLoop(): never {
+    while (true) {
+        console.log('Infinity Loop.');
+    }
+}
+
+
+// usecase 001
+
+type Shape =
+    | { kind: 'circle', radius: number }
+    | { kind: 'square', length: number }
+    | { kind: 'triangle', base: number, length: number }
+
+function getArea(shape: Shape): number {
+    switch (shape.kind) {
+        case 'circle':
+            return shape.radius * 3.1416 * 0.5;
+            break;
+        case 'square':
+            return shape.length * shape.length;
+            break
+        case 'triangle':
+            return shape.base * shape.length * 0.5;
+            break;
+
+        default:
+            const _exhaustedShape: never = shape;
+            throw new Error(`Unexpected Shape, ${_exhaustedShape}`);
+            break;
+    }
+}
