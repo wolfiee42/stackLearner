@@ -39,3 +39,56 @@ const configParams: Required<Config> = {
 
 
 validateConfig(configParams);
+
+
+// Readonly
+
+interface Todo {
+    id: number;
+    title: string;
+    completed: boolean;
+}
+
+const task1: Readonly<Todo> = {
+    id: 3,
+    title: 'Learn C for DSA',
+    completed: false,
+}
+
+// task1.completed = true; // Cannot assign to 'completed' because it is a read-only property.
+
+
+
+// Pick<Type, Keys>
+interface IUser {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+}
+
+type UserProfile = Pick<IUser, "id" | 'name' | 'email'>;
+
+const userprofile33: UserProfile = {
+    id: 2,
+    name: 'ashik',
+    email: 'ashik@yahoo.com'
+}
+
+
+// Omit<Type, Keys>
+
+interface IUser44 {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+}
+
+type SafeUser = Omit<IUser44, 'password'>;
+
+const user44: SafeUser = {
+    id: 5,
+    name: 'amin',
+    email: 'amin@ws.com'
+}
